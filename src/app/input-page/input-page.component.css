@@ -1,0 +1,42 @@
+/* Input Page styles */
+h1 {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.format {
+  width: 80vw;
+  margin: 0 auto;
+}
+/* Custom styles for the "Upload" button */
+.btn-secondary {
+  padding: 12px 20px;
+  background-color: #6c757d; /* Gray background color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add rounded corners */
+  font-size: 1rem; /* Set font size */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.2s; /* Smooth background color transition */
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+}
+
+/* Custom styles for the "Upload" button */
+.btn-primary {
+  margin-left: 10px;
+  padding: 12px 20px;
+  background-color: #007bff; /* Blue background color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add rounded corners */
+  font-size: 1rem; /* Set font size */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.2s; /* Smooth background color transition */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

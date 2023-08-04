@@ -1,0 +1,42 @@
+<h1>Input Page</h1>
+<br />
+<div class="format">
+  <ng-container *ngIf="!fileSelected; else fileSelectedBlock">
+    <input
+      type="file"
+      class="file-input"
+      accept=".csv"
+      (change)="onFileSelected($event)"
+      placeholder="Custom 'No file selected' string"
+      #fileInput
+    />
+  </ng-container>
+
+  <ng-template #fileSelectedBlock>
+    <div class="file-upload">
+      <p class="file-name">{{ fileName || "No file selected" }}</p>
+      <button class="btn btn-secondary" (click)="changeFile()">
+        Change File
+      </button>
+      <button class="btn btn-primary" (click)="onUpload()">Upload</button>
+    </div>
+  </ng-template>
+</div>
+
+<!-- <input
+  type="file"
+  class="file-input"
+  accept=".csv"
+  (change)="onFileSelected($event)"
+  #fileUpload
+/>
+
+<div class="file-upload">
+  <button
+    *ngIf="fileSelected"
+    class="btn btn-primary custom-button"
+    (click)="onUpload()"
+  >
+    Upload
+  </button>
+</div> -->

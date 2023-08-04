@@ -1,0 +1,12 @@
+<h1>Map component</h1>
+<!-- <div *ngFor="let pair of keyValuePairs">
+  Key: {{ pair.key }}, Value: {{ pair.value }}
+</div> -->
+<br />
+<div
+  class="map-container"
+  leaflet
+  [leafletOptions]="options"
+  (leafletMapReady)="onMapReady($event)"
+  (leafletClick)="mapClicked($event)"
+></div>
