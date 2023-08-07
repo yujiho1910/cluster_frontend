@@ -1,9 +1,15 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-input-page',
   templateUrl: './input-page.component.html',
-  styleUrls: ['./input-page.component.css']
+  styleUrls: ['./input-page.component.css'],
 })
 export class InputPageComponent {
   fileName: string = '';
@@ -13,7 +19,8 @@ export class InputPageComponent {
   clusterNumber: number = 2;
 
   @Output() dataEvent = new EventEmitter<any>();
-  @ViewChild('fileInput', { static: false }) fileInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('fileInput', { static: false })
+  fileInput!: ElementRef<HTMLInputElement>;
 
   onFileSelected(event: any): void {
     this.file = event.target.files[0];
@@ -31,9 +38,9 @@ export class InputPageComponent {
     const formBody = new FormData();
     formBody.append('file', this.file);
     formBody.append('clusterNo', this.clusterNumber.toString());
-    fetch('http://127.0.0.1:5000/cluster/cluster', {
+    fetch('https://flask-map-clusterer.azurewebsites.net/cluster/cluster', {
       method: 'POST',
-      body: formBody
+      body: formBody,
     })
       .then((res) => res.json())
       .then((data) => {
@@ -45,7 +52,6 @@ export class InputPageComponent {
         console.log('sent');
       })
       .catch((err) => console.log(err));
-
   }
 
   changeFile(): void {
