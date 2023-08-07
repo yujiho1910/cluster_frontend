@@ -1,3 +1,7 @@
 .app-map {
   justify-content: center;
 }
+
+.hidden {
+  visibility: hidden;
+}

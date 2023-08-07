@@ -1,4 +1,5 @@
-.map-container {
+.map-container,
+.display-centers {
   height: 75vh;
   width: 80vw;
   margin: 0 auto;

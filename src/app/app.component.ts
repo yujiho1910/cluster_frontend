@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as Leaflet from 'leaflet';
 
 @Component({
   selector: 'app-root',
@@ -17,5 +16,9 @@ export class AppComponent {
 
   isObjectEmpty(obj: any): boolean {
     return Object.keys(obj).length === 0;
+  }
+
+  hideMap(): boolean {
+    return this.isObjectEmpty(this.sharedData);
   }
 }

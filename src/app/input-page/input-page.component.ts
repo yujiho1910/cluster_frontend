@@ -9,6 +9,8 @@ export class InputPageComponent {
   fileName: string = '';
   fileSelected: boolean = false;
   file: any;
+  clusterNumbers: number[] = [2, 3, 4, 5];
+  clusterNumber: number = 2;
 
   @Output() dataEvent = new EventEmitter<any>();
   @ViewChild('fileInput', { static: false }) fileInput!: ElementRef<HTMLInputElement>;
@@ -28,6 +30,7 @@ export class InputPageComponent {
     // Implement your upload logic here
     const formBody = new FormData();
     formBody.append('file', this.file);
+    formBody.append('clusterNo', this.clusterNumber.toString());
     fetch('http://127.0.0.1:5000/cluster/cluster', {
       method: 'POST',
       body: formBody
@@ -37,7 +40,7 @@ export class InputPageComponent {
         // data in json format
         // key: name, value: [lat, lng, cluster]
         // pass the values to map component
-        console.log('sending');
+        console.log('sending', this.clusterNumber);
         this.dataEvent.emit(data);
         console.log('sent');
       })

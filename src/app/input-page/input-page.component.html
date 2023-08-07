@@ -20,23 +20,20 @@
       </button>
       <button class="btn btn-primary" (click)="onUpload()">Upload</button>
     </div>
+
+    <!-- To choose a number between 2-5 for number of clusters-->
+    <div class="form-group">
+      <label for="clusterNumber">Number of Clusters</label>
+      <select
+        class="form-control"
+        id="clusterNumber"
+        [(ngModel)]="clusterNumber"
+        name="clusterNumber"
+      >
+        <option *ngFor="let num of clusterNumbers" [value]="num">
+          {{ num }}
+        </option>
+      </select>
+    </div>
   </ng-template>
 </div>
-
-<!-- <input
-  type="file"
-  class="file-input"
-  accept=".csv"
-  (change)="onFileSelected($event)"
-  #fileUpload
-/>
-
-<div class="file-upload">
-  <button
-    *ngIf="fileSelected"
-    class="btn btn-primary custom-button"
-    (click)="onUpload()"
-  >
-    Upload
-  </button>
-</div> -->

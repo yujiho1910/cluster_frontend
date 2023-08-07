@@ -1,7 +1,4 @@
 <h1>Map component</h1>
-<!-- <div *ngFor="let pair of keyValuePairs">
-  Key: {{ pair.key }}, Value: {{ pair.value }}
-</div> -->
 <br />
 <div
   class="map-container"
@@ -10,3 +7,14 @@
   (leafletMapReady)="onMapReady($event)"
   (leafletClick)="mapClicked($event)"
 ></div>
+<hr />
+<div class="display-centers">
+  <h3>Cluster Centers</h3>
+  <br />
+  <div *ngFor="let center of centers; let i = index">
+    <h5>Cluster {{ i + 1 }}</h5>
+    <li>Latitude: {{ center[0] }}</li>
+    <li>Longitude: {{ center[1] }}</li>
+    <br />
+  </div>
+</div>

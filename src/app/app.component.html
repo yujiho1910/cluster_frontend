@@ -3,27 +3,4 @@
   <app-input-page (dataEvent)="changeData($event)"></app-input-page>
   <hr />
 </ng-container>
-<app-map [coords]="sharedData"></app-map>
-
-<!-- df -- 5 mins
-df = df.resample("H").sum()
-roll_df = df.rolling("4H").sum()
-df['rolling'] = roll_df['value']
-
---------------
-index(hourly) | value | rolling
-1 | 
-1
-1
-1
-2
-0
-
-
-----------------------
-1
-2
-3
-4
-5
-4 -->
+<app-map [coords]="sharedData" [ngClass]="{ hidden: hideMap() }"></app-map>
