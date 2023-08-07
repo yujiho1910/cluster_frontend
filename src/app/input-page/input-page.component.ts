@@ -38,7 +38,7 @@ export class InputPageComponent {
     const formBody = new FormData();
     formBody.append('file', this.file);
     formBody.append('clusterNo', this.clusterNumber.toString());
-    fetch('https://flask-map-clusterer.azurewebsites.net/cluster/cluster', {
+    fetch('https://flask-cluster-api.azurewebsites.net/cluster/cluster', {
       method: 'POST',
       body: formBody,
     })
